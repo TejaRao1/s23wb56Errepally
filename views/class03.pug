@@ -1,34 +1,12 @@
 extends layout
 
 block content
-  h1= "Search Results - school"
-  - 
-    let results = [
-          {
-             "schoolName": "Northwest",
-             "schoolLocation": "Missouri",
-             "schoolCourses": 12
-          },
-          {
-            "schoolName": "Harvard",
-             "schoolLocation": "massachusetts",
-             "schoolCourses": 14
-          },
-          {
-             "schoolName": "Yale",
-             "schoolLocation": "connecticut",
-             "schoolCourses": 15
-          },                   
-      ]
-
-  div(class= "container-fluid")
-    div(class = "row")  
+  h1= title
+  - let results = [{sid_ATTR1:"50",sid_ATTR2:"12m",sid_ATTR3:"$55"},{sid_ATTR1:"40",sid_ATTR2:"12.5m",sid_ATTR3:"$55"},{sid_ATTR1:"65",sid_ATTR2:"11m",sid_ATTR3:"$55"}]
+  div(class="container-fluid")
+    div(class="row")
       each item,index in results
-        div(class= "col-sm-2", onclick=`buy(${index})`) University: &nbsp; #{item.schoolName}
-        div(class= "col-sm-2", onclick=`buy(${index})`) State/City: &nbsp; #{item.schoolLocation}
-        div(class= "col-sm-2", onclick=`buy(${index})`) Courses:  &nbsp; #{item.schoolCourses}
-
-  script.
-    function buy(itemNum){
-      alert(`You purchased item ${itemNum+1}`)
-    }
+        div(class="col-sm-2",onClick=`buy(${index})`)
+          p Strength is #{item.ATTR1}
+          p Size is #{item.ATTR2}
+          p Cost is #{item.ATTR3}
