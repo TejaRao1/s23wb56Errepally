@@ -2,11 +2,11 @@ extends layout
 
 block content
   h1= title
-  - let results = [{sid_ATTR1:"50",sid_ATTR2:"12m",sid_ATTR3:"$55"},{sid_ATTR1:"40",sid_ATTR2:"12.5m",sid_ATTR3:"$55"},{sid_ATTR1:"65",sid_ATTR2:"11m",sid_ATTR3:"$55"}]
+  - let results = [{sid_ATTR1:"50",sid_ATTR2:"12m",sid_ATTR3:"$55"},{sid_ATTR1:"40",sid_ATTR2:"12.5m",sid_ATTR3:"$65"},{sid_ATTR1:"65",sid_ATTR2:"11m",sid_ATTR3:"$58"}]
   div(class="container-fluid")
     div(class="row")
       each item,index in results
         div(class="col-sm-2",onClick=`buy(${index})`)
-          p Strength is #{item.ATTR1}
-          p Size is #{item.ATTR2}
-          p Cost is #{item.ATTR3}
+          p Strength is #{item.sid_ATTR1}
+          p Size is #{item.sid_ATTR2}
+          p Cost is #{item.sid_ATTR3}
