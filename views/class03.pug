@@ -10,3 +10,10 @@ block content
           p Strength is #{item.sid_ATTR1}
           p Size is #{item.sid_ATTR2}
           p Cost is #{item.sid_ATTR3}
+
+          //- Bonus Logic
+  script.
+    function buy(itr) {
+      itr = itr+1;
+      alert(`You Purchased Item ${itr}`);
+    }
